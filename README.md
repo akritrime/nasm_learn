@@ -1,4 +1,4 @@
-Important codes:
+# Important codes:
 
     sys_write:
         mov     eax, 4
@@ -11,3 +11,10 @@ Important codes:
     
     return 0 status on exit:
         mov     ebx, 0
+
+
+# Definitions:
+
+    db: declare byte
+    dw: declare word
+    dd: declare double word
