@@ -18,3 +18,11 @@
     db: declare byte
     dw: declare word
     dd: declare double word
+
+# label
+
+    marks a certain point in the code or data.
+
+# subroutines
+
+    Ye'olde functions
