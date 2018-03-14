@@ -1,14 +1,15 @@
          global  _start
 
          section .text
-_start:  mov     rax, 1
-         mov     rdi, 1
-         mov     rsi, message
-         mov     rdx, 13
-         syscall
-         mov     rax, 60
-         xor     rdi, rdi
-         syscall
+_start:  mov     rdx, 13
+         mov     rcx, message
+         mov     rbx, 1
+         mov     rax, 4
+         int     80h
+
+         mov     rbx, 0
+         mov     rax, 1
+         int     80h
 
          section .data
 message: db      "Hello, World", 10
