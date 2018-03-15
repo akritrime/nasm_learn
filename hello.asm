@@ -1,36 +1,15 @@
-         global  _start
+%include 'functions.asm'
 
-         section .text
-_start:  mov     rax, message
-         call    strlen
+        section .data
+msg_a:  db  "Yep, this works.", 10, 0
+msg_b:  db  "I think...", 10, 0
 
-         mov     rdx, rax
-         mov     rcx, message
-         mov     rbx, 1
-         mov     rax, 4
-         int     0x80
-         mov     rbx, 0
-         mov     rax, 1
-         int     0x80
+        section .text
+        global  _start
+_start: mov   eax, msg_a
+        call  sprint
 
-; subroutines:
+        mov   eax, msg_b
+        call  sprint
 
-; strlen - calculates the length of a string pointed to in rax
-
-strlen: ; subroutine label
-        push     rbx
-        mov      rbx, rax
-
-  nextchar: ; internal label
-        cmp     byte [rax], 0
-        jz      finished 
-        inc     rax
-        jmp     nextchar
-
-  finished: ; internal label
-        sub     rax, rbx
-        pop     rbx
-        ret
-
-         section .data
-message: db      "Hello, World!", 10 ;declare 14 bytes starting at address message, initialised to the the ASCII character values and a newline(10)
+        call  quit
