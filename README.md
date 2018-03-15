@@ -1,3 +1,16 @@
+# Registers:
+  
+  ## General:
+    EAX: the accumulator, typically used to store the return value of functions, I/O port access,  arithmetic, interrupt calls
+    EBX: the base, used as a base pointer for memory access
+    ECX: the counter, for loops, array iteration, shifts, etc.
+    EDX: the data register, used for support 
+
+
+# Instructions:
+
+    int 0x80/syscall: a program that's not impure and interacts and effects the outside world, does so via syscalls, to kernels. Interrupts, though achieve the same purpose, are event notifications to the CPU by a hardware or software.
+
 # Important codes:
 
     sys_write:
