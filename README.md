@@ -9,7 +9,7 @@
 
 # Instructions:
 
-    int 0x80/syscall: a program that's not impure and interacts and effects the outside world, does so via syscalls, to kernels. Interrupts, though achieve the same purpose, are event notifications to the CPU by a hardware or software.
+    int 0x80/syscall: a program that's not impure and interacts and effects the outside world, does so via syscalls, to kernels. Interrupts, though achieve the same purpose, are event notifications to the CPU by a hardware or software. int 80h uses rbx to hold the parameters, syscall uses rdi, rsi, rdx, r10, r8, and r9 (in that order).
 
 # Important codes:
 

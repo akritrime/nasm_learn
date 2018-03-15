@@ -8,10 +8,10 @@ _start:  mov     rax, message
          mov     rcx, message
          mov     rbx, 1
          mov     rax, 4
-         syscall
+         int     0x80
          mov     rbx, 0
          mov     rax, 1
-         syscall
+         int     0x80
 
 ; subroutines:
 
